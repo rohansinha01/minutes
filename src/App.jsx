@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import MovieList from './components/MovieList'
@@ -27,6 +27,19 @@ const [movies, setMovies] = useState([{
   "Type": "movie",
   "Poster": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_SX300.jpg"
   }])
+
+  const getMovieRequest = async () => {
+    const url = "https://www.omdbapi.com/?apikey=766f01f2&s=star"
+
+    const response = await fetch(url)
+    const responseJson = await response.json()
+    console.log(responseJson)
+  }
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    getMovieRequest()
+  }, [])
 
   return (
     <>
