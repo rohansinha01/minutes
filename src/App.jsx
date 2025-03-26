@@ -1,8 +1,12 @@
-import { useState } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import MovieList from './components/MovieList'
 
 
 function App() {
-const [movie, setMovie] = useState([{
+const [movies, setMovies] = useState([{
   "Title": "Star Wars: Episode IV - A New Hope",
   "Year": "1977",
   "imdbID": "tt0076759",
@@ -26,8 +30,10 @@ const [movie, setMovie] = useState([{
 
   return (
     <>
-      <div>
-
+      <div className='container-fluid movie-app'>
+        <div className='row'>
+      <MovieList movies = {movies} />
+      </div>
       </div>
 
     </>
