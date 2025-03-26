@@ -6,7 +6,7 @@ const MovieList = (props) => {
     <>
       {props.movies.map((movie, index) => (
         // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
-        <div className="d-flex justify-content-start m-3">
+        <div className="image-container d-flex justify-content-start m-3">
           {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
           <img src={movie.Poster} alt="movie"></img>
         </div>
