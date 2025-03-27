@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import MovieList from './components/MovieList'
+import MovieListHeading from './components/MovieListHeading'
 
 
 function App() {
@@ -26,7 +27,7 @@ const [movies, setMovies] = useState([])
    
       <div className='container movie-app'>
         <div className='row'>
-          
+          <MovieListHeading heading="Movies"/>
         </div>
         <div className='row'>
       <MovieList movies = {movies} />
