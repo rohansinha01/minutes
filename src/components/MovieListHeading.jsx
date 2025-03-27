@@ -1,8 +1,10 @@
 import React from 'react'
 
-const MovieListHeading = () => {
+const MovieListHeading = (props) => {
   return (
-    <div>MovieListHeading</div>
+    <div className='col'>
+        <h1>{props.heading}</h1>
+    </div>
   )
 }
 
