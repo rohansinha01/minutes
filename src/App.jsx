@@ -11,19 +11,21 @@ function App() {
 const [movies, setMovies] = useState([])
 const [searchValue, setSearchValue] = useState('')
 
-  const getMovieRequest = async () => {
-    const url = "https://www.omdbapi.com/?apikey=766f01f2&s=Shape"
+  const getMovieRequest = async (searchValue) => {
+    const url = `https://www.omdbapi.com/?apikey=766f01f2&s=${searchValue}`
 
     const response = await fetch(url)
     const responseJson = await response.json()
-    console.log(responseJson)
-    setMovies(responseJson.Search)
+    
+    if(responseJson.Search) {
+      setMovies(responseJson.Search)
+    }
   }
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
-    getMovieRequest()
-  }, [])
+    getMovieRequest(searchValue)
+  }, [searchValue])
 
   return (
    
