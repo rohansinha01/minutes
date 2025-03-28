@@ -9,6 +9,7 @@ import SearchBox from './components/SearchBox'
 
 function App() {
 const [movies, setMovies] = useState([])
+const [searchValue, setSearchValue] = useState('')
 
   const getMovieRequest = async () => {
     const url = "https://www.omdbapi.com/?apikey=766f01f2&s=Shape"
@@ -29,7 +30,7 @@ const [movies, setMovies] = useState([])
       <div className='container movie-app'>
         <div className='row d-flex align-items-center mt-4 mb-4'>
           <MovieListHeading heading="Movies"/>
-          <SearchBox />
+          <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
         </div>
         <div className='row'>
       <MovieList movies = {movies} />
