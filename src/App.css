@@ -5,8 +5,13 @@ body {
 
 .movie-app > .row {
 	overflow-x: auto;
-	flex-wrap: nowrap;
+	
+	
   
+}
+
+.row {
+	overflow-x: auto;
 }
 
 .image-container {

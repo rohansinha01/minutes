@@ -5,6 +5,7 @@ import './App.css'
 import MovieList from './components/MovieList'
 import MovieListHeading from './components/MovieListHeading'
 import SearchBox from './components/SearchBox'
+import FavMovies from './components/FavMovies'
 
 
 function App() {
@@ -31,11 +32,11 @@ const [searchValue, setSearchValue] = useState('')
    
       <div className='container movie-app'>
         <div className='row d-flex align-items-center mt-4 mb-4'>
-          <MovieListHeading heading="Movies"/>
+          <MovieListHeading heading="Movies" searchValue={searchValue} />
           <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
         </div>
         <div className='row'>
-      <MovieList movies = {movies} />
+      <MovieList movies = {movies} favComponent={FavMovies}/>
       </div>
       </div>
 
